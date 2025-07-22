@@ -1,4 +1,4 @@
-const projectObj = (projectProperties) => {
+const projectObj = (name, todos) => {
     
 }
 

@@ -1,12 +1,15 @@
 import "./styles.css";
+import Status from "./status.js";
+import Priority from "./priority.js";
 import createToDo from "./todo-object";
 
 let firstTask = createToDo({
     title: "Take out the garbage",
     description: "Place the garbage bag into the bin",
     dueDate: "tomorrow",
-    priority: "high",
+    priority: Priority.HIGH,
     notes: "Don't drop it!",
+    status: Status.INCOMPLETE,
 })
 
 console.log("DONE")
@@ -15,3 +18,5 @@ console.log(firstTask);
 
 console.log(firstTask.getTitle());
 console.log(firstTask.getNotes());
+console.log(firstTask.getStatus());
+console.log(firstTask.getPriority());

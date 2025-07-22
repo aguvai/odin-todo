@@ -1,8 +1,42 @@
+:root {
+  --offwhite: rgb(248, 248, 248);
+  --blue: rgb(31, 167, 221);
+  --offblack: rgb(25, 25, 25);
+  --boxshadow-color: rgb(202, 202, 202);
+  --card-ptext-color: rgb(100, 100, 100);
+  --signature-orange: rgb(238, 176, 82);
+}
+
+
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background-color: rebeccapurple;
+  line-height: 1.5;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  grid-template-rows: 1.15fr 5fr;
+
+  width: 100%;
+  height: 100vh;
+}
+
+header {
+  grid-area: 1/2/1/3;
+
+  padding: .5rem 3rem;
+
+  display: grid;
+  gap: 1rem;
+
+  z-index: 1;
+
+  background-color: var(--offwhite);
+
+  box-shadow: 0px 4px 5px var(--boxshadow-color);
 }

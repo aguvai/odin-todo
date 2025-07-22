@@ -1,4 +1,4 @@
-const createToDo = ({ title, description, dueDate, priority, notes, status }) => {
+const createToDo = ({ title, description, notes, dueDate, priority, status }) => {
     return {
         getTitle: () => title,
         getDescription: () => description,

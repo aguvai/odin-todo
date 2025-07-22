@@ -13,8 +13,8 @@ console.log(firstProject.getTodos())
 let firstTask = createToDo({
     title: "Take out the garbage",
     description: "Place the garbage bag into the bin",
-    dueDate: "tomorrow",
     notes: "Don't drop it!",
+    dueDate: new Date("2025-07-21"),
     priority: Priority.HIGH,
     status: Status.INCOMPLETE,
 })

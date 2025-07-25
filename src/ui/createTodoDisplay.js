@@ -14,6 +14,24 @@ const createTodoDisplay = (todo, project) => {
 
     createDivider(todoDiv);
 
+    const checkbox = createElement({
+        type: "input",
+        elementAttributes: {
+            type: "checkbox",
+            name: "completed"
+        },
+        appendTo: todoDiv,
+    });
+
+    const todoName = createElement({
+        type: "input",
+        elementAttributes: {
+            type: "text",
+            value: todo.getTitle(),
+            name: "task-name"
+        },
+        appendTo: todoDiv,
+    });
 
 };
 

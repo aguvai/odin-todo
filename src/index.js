@@ -25,3 +25,4 @@ firstProject.addTodo(firstTask);
 console.log(firstProject.getTodos())
 
 createProjectDisplay(firstProject);
+createTodoDisplay(firstTask, firstProject);

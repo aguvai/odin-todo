@@ -20,26 +20,27 @@ const createProjectDisplay = (project) => {
 
     const todoDiv = createElement({
         type: "div",
-        class: `todos-${project.getID()}`,
+        class: "todo-list",
         appendTo: projDiv,
     });
 };
 
 
 const createTodoDisplay = (todo, project) => {
-    projectDiv = main.querySelector(`{project-${project.getID()}}`)
-    todosDiv = projectDiv.querySelector(`todos-${project.getID()}`)
+    const projectDiv = main.querySelector(`.project-${project.getID()}`);
+    const todoList = projectDiv.querySelector(".todo-list");
 
     const todoDiv = createElement({
         type: "div",
-        class: "todo-"
+        class: `todo-${todo.getID()}`,
+        appendTo: todoList,
     });
 
-    createDivider();
+    createDivider(todoDiv);
 
     
 
-    createDivider();
+    createDivider(todoDiv);
 };
 
 export {createProjectDisplay, createTodoDisplay};

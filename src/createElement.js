@@ -1,5 +1,5 @@
 const createElement = function (properties) {
-    // properties = {type, class, textContent, elementAttributes, appendTo}
+    // properties = {type, class, textContent, elementAttributes = {attributeName: attributeValue}, appendTo}
 
     const element = document.createElement(properties.type);
    

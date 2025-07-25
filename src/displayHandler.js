@@ -5,11 +5,9 @@ const main = document.querySelector("main");
 
 
 const createProjectDisplay = (project) => {
-    const projectID = project.getTitle().replace(/\s/g, "").toLowerCase();
-
     const projDiv = createElement({
         type: "div",
-        class: `project-${projectID}`,
+        class: `project-${project.getID()}`,
         appendTo: main,
     });
     
@@ -22,7 +20,7 @@ const createProjectDisplay = (project) => {
 
     const todoDiv = createElement({
         type: "div",
-        class: `todos-${projectID}`,
+        class: `todos-${project.getID()}`,
         appendTo: projDiv,
     });
     

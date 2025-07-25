@@ -3,6 +3,7 @@ import Status from "./status.js";
 import Priority from "./priority.js";
 import createToDo from "./todo-object";
 import createProject from "./project-object.js";
+import { createProjectDisplay, createTodoDisplay } from "./domHandler.js";
 
 let firstProject = createProject({
     title: "First Project",
@@ -22,3 +23,5 @@ let firstTask = createToDo({
 firstProject.addTodo(firstTask);
 
 console.log(firstProject.getTodos())
+
+createProjectDisplay(firstProject);

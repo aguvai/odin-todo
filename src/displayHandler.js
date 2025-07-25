@@ -23,10 +23,18 @@ const createProjectDisplay = (project) => {
         class: `todos-${project.getID()}`,
         appendTo: projDiv,
     });
-    
 };
 
+
 const createTodoDisplay = (todo, project) => {
+    projectDiv = main.querySelector(`{project-${project.getID()}}`)
+    todosDiv = projectDiv.querySelector(`todos-${project.getID()}`)
+
+    const todoDiv = createElement({
+        type: "div",
+        class: "todo-"
+    });
+
     createDivider();
 
     

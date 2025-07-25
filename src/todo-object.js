@@ -1,4 +1,8 @@
+import { generateTodoID } from "./generateID";
+
 const createToDo = ({ title, description, notes, dueDate, priority, status }) => {
+    const id = generateTodoID();
+
     return {
         getTitle: () => title,
         getDescription: () => description,
@@ -6,6 +10,7 @@ const createToDo = ({ title, description, notes, dueDate, priority, status }) =>
         getPriority: () => priority,
         getNotes: () => notes,
         getStatus: () => status,
+        getID: () => id,
     };
 };
 

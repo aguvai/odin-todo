@@ -1,7 +1,7 @@
-import generateID from "./generateID";
+import { generateProjectID } from "./generateID";
 
 const createProject = ({title, todos = []}) => {
-    const id = generateID()
+    const id = generateProjectID()
     
     return {
         getTitle: () => title,

@@ -1,5 +1,7 @@
-let serialId = 0;
+let projectId = 0;
+let todoID = 0;
 
-const generateID = () => {return ++serialId};
+const generateProjectID = () => {return ++projectId};
+const generateTodoID = () => {return ++todoID};
 
-export default generateID;
+export {generateProjectID, generateTodoID};

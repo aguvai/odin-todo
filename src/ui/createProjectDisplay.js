@@ -10,6 +10,12 @@ const createProjectDisplay = (project) => {
         appendTo: main,
     });
     
+    const highlight = createElement({
+        type: "div",
+        class: "highlight",
+        appendTo: projDiv,
+    });
+
     createElement({
         type: "h3",
         class: `header`,

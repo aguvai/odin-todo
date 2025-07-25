@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Roboto;
+  src: url(fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf);
+}
+
 :root {
   --offwhite: rgb(248, 248, 248);
   --blue: rgb(31, 167, 221);
@@ -14,12 +19,13 @@
 
 body {
   line-height: 1.5;
+  font-family: Roboto, sans-serif;
 }
 
 .app {
   display: grid;
   grid-template-columns: 300px 1fr;
-  grid-template-rows: 1.15fr 5fr;
+  grid-template-rows: 1fr;
 
   width: 100%;
   height: 100vh;
@@ -33,14 +39,53 @@ aside {
   display: grid;
   gap: 1rem;
 
-  background-color: rgb(248, 248, 240);
+  /* background-color: rgb(248, 248, 240); */
+  background-color: var(--blue);
 
-  box-shadow: 0px 0px 4px var(--boxshadow-color);
+  box-shadow: 3px 0px 4px var(--boxshadow-color);
+
+  z-index: 1;
 }
 
 
 main {
   display: grid;
   grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(2, minmax(500px, 1fr));
+  gap: 2rem;
+
+  background-color: var(--offwhite);
+
+  padding: 2rem;
+}
+
+[class^="project-"] {
+  position: relative;
+
+  padding: 1.5rem;
+
+  display: flex;
+  flex-flow: column wrap;
+  background-color: white;
+  border-radius: 8px;
+
+  box-shadow: 2px 4px 4px var(--boxshadow-color);
+}
+
+[class^="project-"] .highlight {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+
+  background-color: var(--signature-orange);
+  
+  width: 7px;
+  height: 100%;
+  
+  border-bottom-left-radius: 6px;
+  border-top-left-radius: 6px;
+}
+
+[class^="project-"]:hover {
+  box-shadow: 4px 6px 5px var(--boxshadow-color);
 }

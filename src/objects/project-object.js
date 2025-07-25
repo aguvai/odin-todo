@@ -1,4 +1,4 @@
-import { generateProjectID } from "./generateID";
+import { generateProjectID } from "../helper-functions/generateID";
 
 const createProject = ({title, todos = []}) => {
     const id = generateProjectID()

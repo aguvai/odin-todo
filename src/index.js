@@ -1,8 +1,8 @@
 import "./styles.css";
-import Status from "./status.js";
-import Priority from "./priority.js";
-import createToDo from "./todo-object";
-import createProject from "./project-object.js";
+import Status from "./enums/status.js";
+import Priority from "./enums/priority.js";
+import createToDo from "./objects/todo-object.js";
+import createProject from "./objects/project-object.js";
 import createProjectDisplay from "./ui/createProjectDisplay.js";
 import createTodoDisplay from "./ui/createTodoDisplay.js";
 

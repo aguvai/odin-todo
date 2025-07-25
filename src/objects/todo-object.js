@@ -1,4 +1,4 @@
-import { generateTodoID } from "./generateID";
+import { generateTodoID } from "../helper-functions/generateID";
 
 const createToDo = ({ title, description, notes, dueDate, priority, status }) => {
     const id = generateTodoID();

@@ -23,7 +23,19 @@ let firstTask = createToDo({
 
 firstProject.addTodo(firstTask);
 
+let secondTask = createToDo({
+    title: "Don't take out the garbage",
+    description: "Place the garbage bag into the bin",
+    notes: "Don't drop it!",
+    dueDate: new Date("2025-07-28"),
+    priority: Priority.HIGH,
+    status: Status.INCOMPLETE,
+})
+
+firstProject.addTodo(secondTask)
+
 console.log(firstProject.getTodos())
 
 createProjectDisplay(firstProject);
 createTodoDisplay(firstTask, firstProject);
+createTodoDisplay(secondTask, firstProject);

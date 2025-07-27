@@ -41,12 +41,6 @@ const createTodoDisplay = (todo, project) => {
         appendTo: infoContainer,
     });
 
-    const calendarIcon = createElement({
-        type: "div",
-        class: "calendar-icon",
-        appendTo: dueDateContainer,
-    });
-
     const dueDate = createElement({
         type: "p",
         textContent: formatDate(todo.getDueDate()),

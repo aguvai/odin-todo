@@ -112,6 +112,7 @@ main {
 
 .todo-info-container {
   display: grid;
+  flex: 1;
 }
 
 
@@ -146,17 +147,15 @@ main {
   background-image: url(../images/circle.svg);
 }
 
-.calendar-icon {
-  width: 1.25rem;
-  height: 1.25rem;
-  background-image: url(../images/calendar.svg);
-}
-
 
 .todo-duedate-container {
   display: flex;
   gap: .5rem;
   align-items: center;
+
+  font-size: .9rem;
+
+  color: rgb(66, 66, 66);
 }
 
 [class^="project-"] h3 {

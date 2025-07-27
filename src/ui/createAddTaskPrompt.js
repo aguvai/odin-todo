@@ -12,6 +12,7 @@ const createAddTaskPrompt = (todoList) => {
     const completeButton = createElement({
         type: "button",
         class: "complete-button",
+        textContent: "+",
         appendTo: addTask,
     });
 

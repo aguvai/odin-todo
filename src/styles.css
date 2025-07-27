@@ -126,16 +126,23 @@ main {
 
 .add-task-prompt button,
 .complete-button {
-  background-repeat: no-repeat;
-  background-size: cover;
   background-color: transparent;
-  border-style: none;
+  
+  border-style: solid;
+  border-radius: 50%;
+  border-width: 2px;
+  border-color: gray;
 }
 
 .add-task-prompt button:hover,
 .add-task-prompt:hover,
 .complete-button:hover {
   cursor: pointer;
+}
+
+.add-task-prompt button:hover,
+.complete-button:hover {
+  background-color: rgb(245, 245, 245);
 }
 
 .add-task-prompt button,
@@ -145,11 +152,13 @@ main {
 }
 
 .add-task-prompt button {
-  background-image: url(../images/plus-circle.svg);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: gray;
 }
 
 .complete-button {
-  background-image: url(../images/circle.svg);
+  
 }
 
 

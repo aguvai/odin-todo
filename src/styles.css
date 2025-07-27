@@ -118,7 +118,7 @@ main {
 
 
 .add-task-prompt {
-  order: 5;
+  order: 100;
 }
 
 .add-task-prompt p {
@@ -153,8 +153,10 @@ main {
   color: gray;
 }
 
-.complete-button {
-  
+
+.new-task-form {
+  background-color: var(--offwhite);
+  display: flex;
 }
 
 

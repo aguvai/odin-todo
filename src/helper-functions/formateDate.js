@@ -5,7 +5,8 @@ const formatDate = (date) => {
         return "Tomorrow";
     } else if (isToday(date)) {
         return "Today";
-    } else {
+    }
+    else {
         return format(date, 'E, LLL do, yyyy');
     }
 };

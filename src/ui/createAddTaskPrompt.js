@@ -1,26 +1,32 @@
 import { createElement, createDivider } from "./createElement";
+import createNewTaskForm from "./createNewTaskForm";
 
 const createAddTaskPrompt = (todoList) => {
-    const addTask = createElement({
+    const addTaskDiv = createElement({
         type: "div",
         class: `add-task-prompt`,
         appendTo: todoList,
     });
 
-    createDivider(addTask);
+    createDivider(addTaskDiv);
 
-    const completeButton = createElement({
+    const addButton = createElement({
         type: "button",
         class: "complete-button",
         textContent: "+",
-        appendTo: addTask,
+        appendTo: addTaskDiv,
     });
 
-    const todoName = createElement({
+    const text = createElement({
         type: "p",
         textContent: "Add task...",
-        appendTo: addTask,
+        appendTo: addTaskDiv,
     })
+
+    addButton.addEventListener("click", (e) => {
+        if (!todoList.querySelector(".new-task-form")) createNewTaskForm(todoList);
+    })
+
 }
 
 export default createAddTaskPrompt;

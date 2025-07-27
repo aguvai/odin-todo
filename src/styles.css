@@ -20,6 +20,7 @@
 body {
   line-height: 1.5;
   font-family: Roboto, sans-serif;
+  color: var(--offblack);
 }
 
 
@@ -138,11 +139,6 @@ main {
 .add-task-prompt:hover,
 .complete-button:hover {
   cursor: pointer;
-}
-
-.add-task-prompt button:hover,
-.complete-button:hover {
-  background-color: rgb(245, 245, 245);
 }
 
 .add-task-prompt button,

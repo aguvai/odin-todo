@@ -11,6 +11,8 @@ const createToDo = ({ title, description, notes, dueDate, priority, status }) =>
         getNotes: () => notes,
         getStatus: () => status,
         getID: () => id,
+
+        setStatus: (newStatus) => status = newStatus,
     };
 };
 

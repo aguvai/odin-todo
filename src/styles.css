@@ -125,18 +125,23 @@ main {
 }
 
 .add-task-prompt button,
-.complete-button,
-.calendar-icon {
+.complete-button {
   background-repeat: no-repeat;
   background-size: cover;
   background-color: transparent;
   border-style: none;
 }
 
+.add-task-prompt button:hover,
+.add-task-prompt:hover,
+.complete-button:hover {
+  cursor: pointer;
+}
+
 .add-task-prompt button,
 .complete-button {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.65rem;
+  height: 1.65rem;
 }
 
 .add-task-prompt button {

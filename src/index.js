@@ -7,7 +7,7 @@ import createProjectDisplay from "./ui/createProjectDisplay.js";
 import createTodoDisplay from "./ui/createTodoDisplay.js";
 
 let firstProject = createProject({
-    title: "First Project",
+    title: "Household Errands",
 })
 
 console.log(firstProject.getTodos())

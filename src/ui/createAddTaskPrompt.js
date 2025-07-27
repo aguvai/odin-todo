@@ -9,21 +9,17 @@ const createAddTaskPrompt = (todoList) => {
 
     createDivider(addTask);
 
-    const icon = createElement({
+    const completeButton = createElement({
         type: "button",
-        class: "add-task-button",
+        class: "complete-button",
         appendTo: addTask,
     });
 
-    const textField = createElement({
-        type: "input",
-        elementAttributes: {
-            type: "text",
-            placeholder: "Add task...",
-            name: "task-name-input"
-        },
+    const todoName = createElement({
+        type: "p",
+        textContent: "Add task...",
         appendTo: addTask,
-    });
+    })
 }
 
 export default createAddTaskPrompt;

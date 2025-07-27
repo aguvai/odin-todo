@@ -8,29 +8,48 @@ const createTodoDisplay = (todo, project) => {
 
     const todoDiv = createElement({
         type: "div",
-        class: `todo-${todo.getID()}`,
+        class: `todo-obj-${todo.getID()}`,
         appendTo: todoList,
     });
 
     createDivider(todoDiv);
 
-    const checkbox = createElement({
-        type: "input",
-        elementAttributes: {
-            type: "checkbox",
-            name: "completed"
-        },
+    const completeButton = createElement({
+        type: "button",
+        class: "complete-button",
+        appendTo: todoDiv,
+    });
+
+
+    const infoContainer = createElement({
+        type: "div",
+        class: "todo-info-container",
         appendTo: todoDiv,
     });
 
     const todoName = createElement({
-        type: "input",
-        elementAttributes: {
-            type: "text",
-            value: todo.getTitle(),
-            name: "task-name"
-        },
-        appendTo: todoDiv,
+        type: "p",
+        textContent: todo.getTitle(),
+        appendTo: infoContainer,
+    });
+
+
+    const dueDateContainer = createElement({
+        type: "div",
+        class: "todo-duedate-container",
+        appendTo: infoContainer,
+    });
+
+    const calendarIcon = createElement({
+        type: "div",
+        class: "calendar-icon",
+        appendTo: dueDateContainer,
+    });
+
+    const dueDate = createElement({
+        type: "p",
+        textContent: "7/27/2025",
+        appendTo: dueDateContainer,
     });
 
 };

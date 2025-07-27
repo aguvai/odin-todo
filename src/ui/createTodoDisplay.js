@@ -1,3 +1,4 @@
+import formatDate from "../helper-functions/formateDate";
 import { createElement, createDivider } from "./createElement";
 
 const main = document.querySelector("main");
@@ -48,7 +49,7 @@ const createTodoDisplay = (todo, project) => {
 
     const dueDate = createElement({
         type: "p",
-        textContent: "7/27/2025",
+        textContent: formatDate(todo.getDueDate()),
         appendTo: dueDateContainer,
     });
 

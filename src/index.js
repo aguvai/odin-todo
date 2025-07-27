@@ -10,8 +10,6 @@ let firstProject = createProject({
     title: "Household Errands",
 })
 
-console.log(firstProject.getTodos())
-
 let firstTask = createToDo({
     title: "Take out the garbage",
     description: "Place the garbage bag into the bin",
@@ -22,6 +20,7 @@ let firstTask = createToDo({
 })
 
 firstProject.addTodo(firstTask);
+
 
 let secondTask = createToDo({
     title: "Don't take out the garbage",
@@ -34,8 +33,17 @@ let secondTask = createToDo({
 
 firstProject.addTodo(secondTask)
 
-console.log(firstProject.getTodos())
-
 createProjectDisplay(firstProject);
-createTodoDisplay(firstTask, firstProject);
-createTodoDisplay(secondTask, firstProject);
+
+let thirdTask = createToDo({
+    title: "Maybe take out the garbage",
+    description: "Place the garbage bag into the bin",
+    notes: "Don't drop it!",
+    dueDate: new Date("2025-07-29"),
+    priority: Priority.HIGH,
+    status: Status.INCOMPLETE,
+})
+
+firstProject.addTodo(thirdTask)
+
+createTodoDisplay(thirdTask, firstProject)

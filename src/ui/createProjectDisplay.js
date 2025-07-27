@@ -1,5 +1,6 @@
 import {createElement, createDivider} from "./createElement";
 import createAddTaskPrompt from "./createAddTaskPrompt";
+import createTodoDisplay from "./createTodoDisplay";
 
 const main = document.querySelector("main");
 
@@ -28,6 +29,12 @@ const createProjectDisplay = (project) => {
         class: "todo-list",
         appendTo: projDiv,
     });
+
+    if (project.getTodos().length > 0) {
+        project.getTodos().forEach(todo => {
+            createTodoDisplay(todo, project);
+        });
+    }
 
     createAddTaskPrompt(todoList);
 };

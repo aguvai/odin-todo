@@ -156,12 +156,6 @@ main {
 }
 
 
-.new-task-form {
-  background-color: var(--offwhite);
-  display: flex;
-}
-
-
 .todo-duedate-container {
   display: flex;
   gap: .5rem;
@@ -200,7 +194,32 @@ main {
   justify-self: center;
 }
 
+
+.new-task-form {
+  background-color: var(--offwhite);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
 .form-element-div {
   display: flex;
   flex-direction: column;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input[type="submit"],
+input[type="text"],
+input[type="date"] {
+  border-radius: 8px;
+  padding: .5rem;
+  font-size: 1rem;
+}
+
+input[type="submit"]:hover {
+  cursor: pointer;
 }

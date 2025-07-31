@@ -2,11 +2,8 @@ import { createElement } from "./createElement";
 
 const formInputs = [
     {
-        type: "input",
-        attributes: {
-            type: "text",
-            id: "title",
-        }
+        type: "text",
+        id: "title",
     },
 ]
 
@@ -32,15 +29,15 @@ const createNewTaskForm = (todoList) => {
         createElement({
             type: "label",
             elementAttributes: {
-                for: input.attributes.id,
+                for: input.id,
             },
-            textContent: input.attributes.id.charAt(0).toUpperCase() + input.attributes.id.substring(1),
+            textContent: input.id.charAt(0).toUpperCase() + input.id.substring(1),
             appendTo: container,
         });
 
         createElement({
-            type: input.type,
-            elementAttributes: input.attributes,
+            type: "input",
+            elementAttributes: input,
             appendTo: container,
         });
     };

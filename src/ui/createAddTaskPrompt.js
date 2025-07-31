@@ -25,6 +25,7 @@ const createAddTaskPrompt = (todoList) => {
 
     addTaskDiv.addEventListener("click", (e) => {
         if (!todoList.querySelector(".new-task-form")) createNewTaskForm(todoList);
+        todoList.removeChild(addTaskDiv);
     })
 
 }

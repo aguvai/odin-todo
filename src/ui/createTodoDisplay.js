@@ -59,8 +59,6 @@ const createTodoDisplay = (todo, project) => {
             
             infoContainer.appendChild(dueDateContainer);
 
-            todoDiv.style.order = "1"
-
             todoName.style.color = "var(--offblack)"
             todoName.style.textDecoration = "none";
         } else {
@@ -68,8 +66,6 @@ const createTodoDisplay = (todo, project) => {
             
             completeButton.style.backgroundColor = "gray";
             completeButton.style.backgroundImage = "url(../images/check.svg)"
-            
-            todoDiv.style.order = "2"
 
             infoContainer.removeChild(dueDateContainer);
 

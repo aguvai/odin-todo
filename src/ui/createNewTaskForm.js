@@ -5,6 +5,10 @@ const formInputs = [
         type: "text",
         id: "title",
     },
+    {
+        type: "date",
+        id: "dueDate",
+    }
 ]
 
 const createNewTaskForm = (todoList) => {

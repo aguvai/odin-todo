@@ -69,11 +69,13 @@ main {
   padding: 1.5rem;
 
   display: flex;
-  flex-flow: column wrap;
+  flex-direction: column;
   background-color: white;
   border-radius: 8px;
 
   box-shadow: 2px 4px 4px var(--boxshadow-color);
+
+  overflow-y: auto;
 }
 
 [class^="project-"] .highlight {
@@ -196,4 +198,9 @@ main {
   background-color: lightgray;
 
   justify-self: center;
+}
+
+.form-element-div {
+  display: flex;
+  flex-direction: column;
 }

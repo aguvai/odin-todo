@@ -72,9 +72,9 @@ const createNewTaskForm = (todoList, project) => {
         type: "input",
         elementAttributes: {
             type: "submit",
+            value: "Create"
         },
         appendTo: mainForm,
-        textContent: "Create"
     });
 
     submitButton.addEventListener("click", (event) => {

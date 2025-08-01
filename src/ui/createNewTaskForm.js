@@ -49,6 +49,8 @@ const createFormInput = (input, mainForm) => {
         appendTo: container,
     });
 
+    if (id == "title") inputElement.focus();
+
     return {
         id: inputElement,
     };

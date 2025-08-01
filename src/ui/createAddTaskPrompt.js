@@ -10,20 +10,20 @@ const createAddTaskPrompt = (todoList, project) => {
 
     createDivider(addTaskDiv);
 
-    const addButton = createElement({
+    createElement({
         type: "button",
         class: "complete-button",
         textContent: "+",
         appendTo: addTaskDiv,
     });
 
-    const text = createElement({
+    createElement({
         type: "p",
         textContent: "Add task...",
         appendTo: addTaskDiv,
     })
 
-    addTaskDiv.addEventListener("click", (e) => {
+    addTaskDiv.addEventListener("click", () => {
         if (!todoList.querySelector(".new-task-form")) createNewTaskForm(todoList, project);
     })
 

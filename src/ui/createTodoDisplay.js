@@ -56,7 +56,7 @@ const createTodoDisplay = (todo, project) => {
         createDueDateContainer()
     }
 
-    completeButton.addEventListener("click", (e) => {
+    completeButton.addEventListener("click", () => {
         let todoStatus = todo.getStatus();
 
         if (todoStatus === Status.COMPLETE) {

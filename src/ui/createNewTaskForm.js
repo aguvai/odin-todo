@@ -54,6 +54,27 @@ const createFormInput = (input, mainForm) => {
     };
 }
 
+const handleForm = (mainForm, project) => {
+    if (mainForm.checkValidity() == true) {
+        displayFormValidity(mainForm, true);
+
+        const formData = new FormData(mainForm);
+
+        const taskTitle = formData.get("title");
+        const dueDate = formData.get("dueDate");
+
+        let newTask = createTask({
+            title: taskTitle,
+            dueDate: dueDate !== "" ? new Date(parseISO(dueDate)) : null,
+            status: Status.INCOMPLETE,
+        });
+
+        createTodoDisplay(newTask, project);
+    } else {
+        displayFormValidity(mainForm, false);
+    };
+}
+
 const createNewTaskForm = (todoList, project) => {
     const mainDiv = createElement({
         type: "div",
@@ -81,30 +102,7 @@ const createNewTaskForm = (todoList, project) => {
 
     submitButton.addEventListener("click", (event) => {
         event.preventDefault();
-        if (mainForm.checkValidity() == true) {
-            displayFormValidity(mainForm, true);
-
-            const formData = new FormData(mainForm);
-
-            console.log(formData);
-
-            const taskTitle = formData.get("title");
-            const dueDate = formData.get("dueDate");
-
-            console.log(taskTitle);
-            console.log(dueDate);
-
-            let newTask = createTask({
-                title: taskTitle,
-                dueDate: dueDate !== "" ? new Date(parseISO(dueDate)) : null,
-                status: Status.INCOMPLETE,
-            });
-
-            createTodoDisplay(newTask, project);
-        } else {
-            displayFormValidity(mainForm, false);
-        };
-
+        handleForm(mainForm, project)
     });
 };
 

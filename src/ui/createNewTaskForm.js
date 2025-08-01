@@ -1,5 +1,7 @@
 import { createElement } from "./createElement";
 
+import { parseISO } from "date-fns";
+
 import createTask from "../objects/Task";
 import createTodoDisplay from "./createTodoDisplay";
 
@@ -94,7 +96,7 @@ const createNewTaskForm = (todoList, project) => {
 
             let newTask = createTask({
                 title: taskTitle,
-                dueDate: dueDate !== "" ? new Date(dueDate) : null,
+                dueDate: dueDate !== "" ? new Date(parseISO(dueDate)) : null,
                 status: Status.INCOMPLETE,
             });
 

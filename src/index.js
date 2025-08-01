@@ -1,8 +1,8 @@
 import "./styles.css";
-import Status from "./enums/status.js";
-import Priority from "./enums/priority.js";
-import createToDo from "./objects/todo-object.js";
-import createProject from "./objects/project-object.js";
+import Status from "./enums/Status.js";
+import Priority from "./enums/Priority.js";
+import createTask from "./objects/Task.js";
+import createProject from "./objects/Project.js";
 import createProjectDisplay from "./ui/createProjectDisplay.js";
 import createTodoDisplay from "./ui/createTodoDisplay.js";
 
@@ -10,7 +10,7 @@ let firstProject = createProject({
     title: "Household Errands",
 })
 
-let firstTask = createToDo({
+let firstTask = createTask({
     title: "Take out the garbage",
     description: "Place the garbage bag into the bin",
     notes: "Don't drop it!",
@@ -22,7 +22,7 @@ let firstTask = createToDo({
 firstProject.addTodo(firstTask);
 
 
-let secondTask = createToDo({
+let secondTask = createTask({
     title: "Don't take out the garbage",
     description: "Place the garbage bag into the bin",
     notes: "Don't drop it!",
@@ -35,7 +35,7 @@ firstProject.addTodo(secondTask)
 
 createProjectDisplay(firstProject);
 
-let thirdTask = createToDo({
+let thirdTask = createTask({
     title: "Maybe take out the garbage",
     description: "Place the garbage bag into the bin",
     notes: "Don't drop it!",

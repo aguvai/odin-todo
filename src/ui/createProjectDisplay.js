@@ -36,7 +36,7 @@ const createProjectDisplay = (project) => {
         });
     }
 
-    createAddTaskPrompt(todoList);
+    createAddTaskPrompt(todoList, project);
 };
 
 export default createProjectDisplay;

@@ -1,40 +1,58 @@
 import { createElement } from "./createElement";
 
-const formInputs = [
+import createTask from "../objects/Task";
+import createTodoDisplay from "./createTodoDisplay";
+
+import displayFormValidity from "../helper-functions/validateForm";
+
+import Status from "../enums/Status";
+
+const inputTemplates = [
     {
         type: "text",
         id: "title",
+        name: "title",
+        required: "true",
     },
     {
         type: "date",
         id: "dueDate",
+        name: "dueDate",
     }
-]
+];
+
+let formInputs = [];
 
 const createFormInput = (input, mainForm) => {
-            const container = createElement({
-            type: "div",
-            class: "form-element-div",
-            appendTo: mainForm,
-        });
+    const id = input.id;
 
-        createElement({
-            type: "label",
-            elementAttributes: {
-                for: input.id,
-            },
-            textContent: input.id.charAt(0).toUpperCase() + input.id.substring(1),
-            appendTo: container,
-        });
+    const container = createElement({
+        type: "div",
+        class: "form-element-div",
+        appendTo: mainForm,
+    });
 
-        createElement({
-            type: "input",
-            elementAttributes: input,
-            appendTo: container,
-        });
+    createElement({
+        type: "label",
+        elementAttributes: {
+            for: id,
+        },
+        textContent: id.charAt(0).toUpperCase() + id.substring(1),
+        appendTo: container,
+    });
+
+    const inputElement = createElement({
+        type: "input",
+        elementAttributes: input,
+        appendTo: container,
+    });
+
+    return {
+        id: inputElement,
+    };
 }
 
-const createNewTaskForm = (todoList) => {
+const createNewTaskForm = (todoList, project) => {
     const mainDiv = createElement({
         type: "div",
         class: "new-task-form",
@@ -46,8 +64,8 @@ const createNewTaskForm = (todoList) => {
         appendTo: mainDiv,
     });
 
-    for (let input of formInputs) {
-        createFormInput(input, mainForm)
+    for (let input of inputTemplates) {
+        formInputs.push(createFormInput(input, mainForm));
     };
 
     const submitButton = createElement({
@@ -57,6 +75,34 @@ const createNewTaskForm = (todoList) => {
         },
         appendTo: mainForm,
         textContent: "Create"
+    });
+
+    submitButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        if (mainForm.checkValidity() == true) {
+            displayFormValidity(mainForm, true);
+
+            const formData = new FormData(mainForm);
+
+            console.log(formData);
+
+            const taskTitle = formData.get("title");
+            const dueDate = formData.get("dueDate");
+
+            console.log(taskTitle);
+            console.log(dueDate);
+
+            let newTask = createTask({
+                title: taskTitle,
+                dueDate: dueDate !== "" ? new Date(dueDate) : null,
+                status: Status.INCOMPLETE,
+            });
+
+            createTodoDisplay(newTask, project);
+        } else {
+            displayFormValidity(mainForm, false);
+        };
+
     });
 };
 

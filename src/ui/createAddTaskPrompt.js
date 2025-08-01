@@ -1,7 +1,7 @@
 import { createElement, createDivider } from "./createElement";
 import createNewTaskForm from "./createNewTaskForm";
 
-const createAddTaskPrompt = (todoList) => {
+const createAddTaskPrompt = (todoList, project) => {
     const addTaskDiv = createElement({
         type: "div",
         class: `add-task-prompt`,
@@ -24,7 +24,7 @@ const createAddTaskPrompt = (todoList) => {
     })
 
     addTaskDiv.addEventListener("click", (e) => {
-        if (!todoList.querySelector(".new-task-form")) createNewTaskForm(todoList);
+        if (!todoList.querySelector(".new-task-form")) createNewTaskForm(todoList, project);
         todoList.removeChild(addTaskDiv);
     })
 

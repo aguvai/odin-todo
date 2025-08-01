@@ -1,4 +1,4 @@
-import Status from "../enums/status";
+import Status from "../enums/Status";
 import formatDate from "../helper-functions/formateDate";
 import { createElement, createDivider } from "./createElement";
 
@@ -35,44 +35,58 @@ const createTodoDisplay = (todo, project) => {
         appendTo: infoContainer,
     });
 
+    let dueDate = todo.getDueDate();
+    let dueDateContainer = null;
 
-    const dueDateContainer = createElement({
-        type: "div",
-        class: "todo-duedate-container",
-        appendTo: infoContainer,
-    });
+    const createDueDateContainer = () => {
+        dueDateContainer = createElement({
+            type: "div",
+            class: "todo-duedate-container",
+            appendTo: infoContainer,
+        });
 
-    const dueDate = createElement({
-        type: "p",
-        textContent: formatDate(todo.getDueDate()),
-        appendTo: dueDateContainer,
-    });
+        createElement({
+            type: "p",
+            textContent: formatDate(dueDate),
+            appendTo: dueDateContainer,
+        });
+    }
 
+    if (dueDate != null) {
+        createDueDateContainer()
+    }
 
     completeButton.addEventListener("click", (e) => {
         let todoStatus = todo.getStatus();
-        if (todoStatus == Status.COMPLETE) {
-            todo.setStatus(Status.INCOMPLETE);
-            
-            completeButton.style.backgroundColor = "transparent";
-            completeButton.style.backgroundImage = ""
-            
-            infoContainer.appendChild(dueDateContainer);
 
-            todoName.style.color = "var(--offblack)"
+        if (todoStatus === Status.COMPLETE) {
+            todo.setStatus(Status.INCOMPLETE);
+
+            completeButton.style.backgroundColor = "transparent";
+            completeButton.style.backgroundImage = "";
+
+            if (dueDate && !dueDateContainer) {
+                createDueDateContainer()
+            } else if (dueDate && !infoContainer.contains(dueDateContainer)) {
+                infoContainer.appendChild(dueDateContainer);
+            }
+
+            todoName.style.color = "var(--offblack)";
             todoName.style.textDecoration = "none";
         } else {
             todo.setStatus(Status.COMPLETE);
-            
-            completeButton.style.backgroundColor = "gray";
-            completeButton.style.backgroundImage = "url(../images/check.svg)"
 
-            infoContainer.removeChild(dueDateContainer);
+            completeButton.style.backgroundColor = "gray";
+            completeButton.style.backgroundImage = "url(../images/check.svg)";
+
+            if (infoContainer.contains(dueDateContainer)) {
+                infoContainer.removeChild(dueDateContainer);
+            }
 
             todoName.style.color = "gray";
             todoName.style.textDecoration = "line-through";
-        };
-    })
+        }
+    });
 };
 
 export default createTodoDisplay;

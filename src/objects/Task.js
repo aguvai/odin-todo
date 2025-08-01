@@ -1,6 +1,6 @@
 import { generateTodoID } from "../helper-functions/generateID";
 
-const createToDo = ({ title, description, notes, dueDate, priority, status }) => {
+const createTask = ({ title, description, notes, dueDate, priority, status }) => {
     const id = generateTodoID();
 
     return {
@@ -16,4 +16,4 @@ const createToDo = ({ title, description, notes, dueDate, priority, status }) =>
     };
 };
 
-export default createToDo;
+export default createTask;

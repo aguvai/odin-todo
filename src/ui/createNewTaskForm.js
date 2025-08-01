@@ -54,7 +54,7 @@ const createFormInput = (input, mainForm) => {
     };
 }
 
-const handleForm = (mainForm, project) => {
+const processForm = (mainForm, project) => {
     if (mainForm.checkValidity() == true) {
         displayFormValidity(mainForm, true);
 
@@ -70,6 +70,8 @@ const handleForm = (mainForm, project) => {
         });
 
         createTodoDisplay(newTask, project);
+
+        mainForm.parentNode.remove();
     } else {
         displayFormValidity(mainForm, false);
     };
@@ -102,7 +104,7 @@ const createNewTaskForm = (todoList, project) => {
 
     submitButton.addEventListener("click", (event) => {
         event.preventDefault();
-        handleForm(mainForm, project)
+        processForm(mainForm, project)
     });
 };
 

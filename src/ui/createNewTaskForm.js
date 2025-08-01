@@ -11,20 +11,8 @@ const formInputs = [
     }
 ]
 
-const createNewTaskForm = (todoList) => {
-    const mainDiv = createElement({
-        type: "div",
-        class: "new-task-form",
-        appendTo: todoList,
-    });
-
-    const mainForm = createElement({
-        type: "form",
-        appendTo: mainDiv,
-    });
-
-    for (let input of formInputs) {
-        const container = createElement({
+const createFormInput = (input, mainForm) => {
+            const container = createElement({
             type: "div",
             class: "form-element-div",
             appendTo: mainForm,
@@ -44,6 +32,22 @@ const createNewTaskForm = (todoList) => {
             elementAttributes: input,
             appendTo: container,
         });
+}
+
+const createNewTaskForm = (todoList) => {
+    const mainDiv = createElement({
+        type: "div",
+        class: "new-task-form",
+        appendTo: todoList,
+    });
+
+    const mainForm = createElement({
+        type: "form",
+        appendTo: mainDiv,
+    });
+
+    for (let input of formInputs) {
+        createFormInput(input, mainForm)
     };
 
     const submitButton = createElement({
